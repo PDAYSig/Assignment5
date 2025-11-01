@@ -1,4 +1,9 @@
 import random
+'''
+This file contains the Deck class. It is used to keep track of which cards are in the deck
+as well as shuffling and dealing the cards.
+'''
+
 
 class Deck():
     def __init__(self):
@@ -11,9 +16,11 @@ class Deck():
                         ]
 
     def shuffle(self):
+        '''This function is used to shuffle the cards'''
         random.shuffle(self.__cards)
 
     def deal(self):
+        '''This function deals a single card from the deck'''
         self.__card_count -= 1
         return self.__cards.pop()
 
@@ -21,6 +28,7 @@ class Deck():
         deck_str = ""
         card_count = 0
         for card in self.__cards:
+            #we check if the card count is a multiple of 13
             if card_count % 13 == 0:
                 deck_str = deck_str + f"\n{card}"
             else:
