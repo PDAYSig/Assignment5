@@ -1,15 +1,18 @@
-from Deck import Deck
-from Card import Card
+import random
+from card import Card
+from deck import Deck
+from hand import Hand
 
 def main():
-    deck = Deck()
-    deck.shuffle()
-    print(deck)
+    """The main program for testing the classes Card, Deck and Hand."""
 
-    card_1 = Card(deck.deal())
-    print(card_1)
-    print(deck)
-    
+    c1 = Card(10, 'S')
+    c2 = Card('J', 'H')
+    c3 = Card('10', 'D')
+
+    print(c1, c2, c3)
+
+
 
 if __name__ == "__main__":
     main()
