@@ -1,22 +1,23 @@
-from Deck import Deck
-class Card(Deck):
-    def __init__(self, card : str):
+from typing import Union
+class Card:
+    def __init__(self, rank : Union[str, int], suit : str):
         # super().__init__()
-        self.suit = card[len(card) - 1]
-        try:
-            self.rank = int(card[:len(card) - 1])
-        except ValueError:
-            '''If we cannot make the rank an integer, it must mean that the card is
+        self.suit = suit
+        '''If we cannot make the rank an integer, it must mean that the card is
             a Jack, Queen, King, or Ace so we must assign them values specially'''
-            if card[:len(card) - 1] == 'J':
+        try:
+            self.rank = int(rank)
+        except:
+            if rank == 'J':
                 self.rank = 11
-            elif card[:len(card) - 1] == 'Q':
+            elif rank == 'Q':
                 self.rank = 12
-            elif card[:len(card) - 1] == 'K':
+            elif rank == 'K':
                 self.rank = 13
-            elif card[:len(card) - 1] == 'A':
+            elif rank == 'A':
                 self.rank = 14
-    
+            
+
     def __str__(self):
         if self.rank == 11:
             print_rank = 'J'
