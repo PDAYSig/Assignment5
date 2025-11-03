@@ -12,15 +12,19 @@
 # (8 points) add_card(card): Adds the given card to the hand. If the hand is full, then nothing happens.
 from card import Card
 class Hand:
+    NUMBER_OF_CARDS = 13
+
     def __init__(self):
-        NUMBER_OF_CARDS = 13
         self.hand = []
 
     def __str__(self):
-        
         show_cards = ""
         for card in self.hand:
-            show_cards = show_cards + card.__str__()
+            if card == self.hand[len(self.hand) - 1]:
+                show_cards = show_cards + card.__str__()
+            else:
+                show_cards = show_cards + f"{card.__str__() :>3}" + " "
+        
         if self.hand == None:
             show_cards = "Empty"
         return show_cards
@@ -30,12 +34,17 @@ class Hand:
 
 
 
-def main():
-    hand = Hand()
-    print(hand)
+# def main():
+#     hand = Hand()
+#     print(hand)
 
-    ace_of_spades = Card('A', 'S')
-    hand.add_card(ace_of_spades)
-    print(hand)
+#     ace_of_spades = Card('A', 'S')
+#     hand.add_card(ace_of_spades)
+#     print(hand)
+#     print(ace_of_spades.__str__())
+#     ace_of_hearts = Card('A', 'H')
+#     hand.add_card(ace_of_hearts)
+#     print(hand)
 
-main()
+
+# main()

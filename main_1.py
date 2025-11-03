@@ -6,12 +6,35 @@ from hand import Hand
 def main():
     """The main program for testing the classes Card, Deck and Hand."""
 
-    c1 = Card(10, 'S')
-    c2 = Card('J', 'H')
-    c3 = Card('10', 'D')
+    random.seed(10)
 
-    print(c1, c2, c3)
+    card1 = Card(5,'S')
+    print(card1)
+    card2 = Card('Q','D')
+    print(card2)
+    card3 = Card(13, 'H')
+    print(card3)
+    card4 = Card(2, 'C')
+    print(card4)
+    card6 = Card('A', 'S')
+    print(card6)
+    card7 = Card(10, 'D')
+    print(card7)
+    
+    print()
+    deck = Deck()
+    deck.shuffle()
+    print(deck)
+    print()
 
+    hand = Hand()
+
+    for _ in range(Hand.NUMBER_OF_CARDS):
+        hand.add_card(deck.deal())
+    print(hand)
+    print()
+    
+    print(deck)
 
 
 if __name__ == "__main__":

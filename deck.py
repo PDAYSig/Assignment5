@@ -5,7 +5,7 @@ as well as shuffling and dealing the cards.
 '''
 
 
-class Deck():
+class Deck:
     def __init__(self):
         self.__card_count = 52
         self.__cards = [
@@ -30,9 +30,9 @@ class Deck():
         for card in self.__cards:
             #we check if the card count is a multiple of 13
             if card_count % 13 == 0:
-                deck_str = deck_str + f"\n{card}"
+                deck_str = deck_str + f"\n{card :>3}"
             else:
-                deck_str = deck_str + f" {card}"
+                deck_str = deck_str + f" {card :>3}"
             card_count += 1
 
         return deck_str

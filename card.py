@@ -30,4 +30,5 @@ class Card:
         else:
             print_rank = self.rank
 
-        return f'{print_rank}{self.suit}'
+        str_return = f'{print_rank}{self.suit}'
+        return f'{str_return :>3}'
