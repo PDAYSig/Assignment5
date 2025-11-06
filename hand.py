@@ -1,4 +1,5 @@
 from card import Card
+from typing import Union
 class Hand:
     NUMBER_OF_CARDS = 13
 
@@ -10,18 +11,19 @@ class Hand:
         This function returns a string containing all the cards in the hand'''
         show_hand = ""
         for card in self.cards:
-            if card == self.cards[len(self.cards) - 1]:
-                show_hand = show_hand + card.__str__()
-            else:
-                show_hand = show_hand + f"{card.__str__() :>3}" + " "
-        
+            show_hand = show_hand + f"{card.__str__() :>3}" + " "
+
         if self.cards == None:
             show_hand = "Empty"
         return show_hand
     
-    def add_card(self, card : Card):
+    def add_card(self, card_or_rank, suit= None) -> None:
         '''This function adds a Card object to the hand'''
-        self.cards.append(card)
+        if suit == None and type(card_or_rank) == tuple:
+            rank, suit = card_or_rank
+        else:
+            rank = card_or_rank
+        self.cards.append(Card(rank, suit))
 
 
 

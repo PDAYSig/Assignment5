@@ -12,12 +12,7 @@ class Deck:
         self.deck = []
         ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
         suits = ['H', 'S', 'D', 'C']
-        start_deck = {
-                    'H' : ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'], 
-                    'S' : ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'], 
-                    'D' : ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'], 
-                    'C' : ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'],
-        }
+
         # we add the cards to our deck variable as a Card type
         for suit in suits:
             for rank in ranks:
@@ -31,7 +26,9 @@ class Deck:
     def deal(self):
         '''This function deals a single card from the deck'''
         self.__card_count -= 1
-        return self.deck.pop()
+        dealt_card = self.deck[0]
+        self.deck.remove(dealt_card)
+        return dealt_card
 
     def __str__(self):
         deck_str = ""
@@ -51,11 +48,3 @@ class Deck:
             card_count += 1
 
         return deck_str
-    
-deck = Deck()
-print(deck)
-deck.shuffle()
-print(deck)
-
-deck.deal()
-print(deck)

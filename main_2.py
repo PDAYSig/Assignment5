@@ -6,7 +6,7 @@ from hand import Hand
 def main():
     """The main program for testing the classes Card, Deck and Hand."""
 
-    random.seed(10)
+    random.seed(5)
     test_cards()
 
     deck = Deck()
