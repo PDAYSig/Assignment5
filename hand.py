@@ -1,6 +1,5 @@
 '''
-This file contains the Hand class. It is used to keep track of which cards are in the hand.
-It has a public constant NUMBER_OF_CARDS that determines how many cards the hand can hold.
+Implements the Hand class, used to keep track of which cards are in the hand.
 It only has one method, add_card, that takes a card and adds it to the hand.
 '''
 
@@ -25,6 +24,6 @@ class Hand:
         return show_hand
     
     def add_card(self, card) -> None:
-        '''This function adds a Card object to the hand'''
+        '''Adds a Card object to the hand'''
         if len(self.cards) < Hand.NUMBER_OF_CARDS:
             self.cards.append(card)

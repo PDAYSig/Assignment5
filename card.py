@@ -1,10 +1,8 @@
 '''
-This file contains the Card class. It is used to create playing cards,
+Defines the Card class, used to create playing cards
 and can store the suit and rank (as an integer) of the card
 '''
 
-
-from typing import Union
 class Card:
     __ACE_VALUE = 14 # Since the ace has a different value in different games, We make its value a constant for scalability
 
